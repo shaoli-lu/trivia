@@ -11,7 +11,9 @@
     width: 300px;
 }
 
-
+#bar {
+    height: 1%;
+}
 
 .container {
     display: flex;
