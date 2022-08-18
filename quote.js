@@ -13,9 +13,13 @@ function getQuote() {
         document.querySelector('#category').innerHTML = "Category: " +  data.results[0].category;  
         document.querySelector('#type').innerHTML = "Type: " +  data.results[0].type;  
         document.querySelector('#difficulty').innerHTML = "Difficulty: " +  data.results[0].difficulty;  
-        document.querySelector('#correct_answer').innerHTML = "Answer: " + data.results[0].correct_answer;    
-       
-        
+        document.querySelector('#correct_answer').innerHTML = "Answer: " + data.results[0].correct_answer;  
+        document.querySelector('#ia1').innerHTML = "" + data.results[0].incorrect_answers[0]; 
+        if (data.results[0].incorrect_answers[1] !== undefined)   
+        {document.querySelector('#ia2').innerHTML = "" + data.results[0].incorrect_answers[1];} else {document.querySelector('#ia2').innerHTML = "";}
+        if (data.results[0].incorrect_answers[2] !== undefined)      
+        {document.querySelector('#ia3').innerHTML = "" + data.results[0].incorrect_answers[2];} else {document.querySelector('#ia3').innerHTML = "";}      
+               
             
     })  
 }
