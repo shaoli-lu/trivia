@@ -11,7 +11,13 @@ function getQuote() {
    
         document.querySelector('#question').innerHTML = '"' + data.results[0].question  + '"' ;  
         document.querySelector('#category').innerHTML = "Category: " +  data.results[0].category;  
-        document.querySelector('#type').innerHTML = "Type: " +  data.results[0].type;  
+        if (data.results[0].type=="boolean") {
+            document.querySelector('#type').innerHTML = "Type: " +  "True/False";  
+        } else if (data.results[0].type=="multiple") {
+            document.querySelector('#type').innerHTML = "Type: " +  "Multiple Choice";  
+        } else
+        {document.querySelector('#type').innerHTML = "Type: " +  data.results[0].type; } 
+
         document.querySelector('#difficulty').innerHTML = "Difficulty: " +  data.results[0].difficulty;  
         document.querySelector('#correct_answer').innerHTML = "Answer: " + data.results[0].correct_answer;  
         document.querySelector('#ia1').innerHTML = "" + data.results[0].incorrect_answers[0]; 
