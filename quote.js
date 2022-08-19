@@ -5,6 +5,10 @@ getQuote();
 
 })
 
+function capitalize(str){
+    return str[0].toUpperCase()+str.slice(1)
+}
+
 function getQuote() {
     fetch("https://opentdb.com/api.php?amount=1").then(response => response.json()).then(data => {
     
@@ -18,7 +22,7 @@ function getQuote() {
         } else
         {document.querySelector('#type').innerHTML = "Type: " +  data.results[0].type; } 
 
-        document.querySelector('#difficulty').innerHTML = "Difficulty: " +  data.results[0].difficulty;  
+        document.querySelector('#difficulty').innerHTML = "Difficulty: " +  capitalize(data.results[0].difficulty);  
         document.querySelector('#correct_answer').innerHTML = "Answer: " + data.results[0].correct_answer;  
         document.querySelector('#ia0').innerHTML = "Incorrect Answer(s):";
         document.querySelector('#ia1').innerHTML = "" + data.results[0].incorrect_answers[0]; 
