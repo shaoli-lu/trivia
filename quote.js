@@ -20,6 +20,7 @@ function getQuote() {
 
         document.querySelector('#difficulty').innerHTML = "Difficulty: " +  data.results[0].difficulty;  
         document.querySelector('#correct_answer').innerHTML = "Answer: " + data.results[0].correct_answer;  
+        document.querySelector('#ia0').innerHTML = "Incorrect Answer(s):";
         document.querySelector('#ia1').innerHTML = "" + data.results[0].incorrect_answers[0]; 
         if (data.results[0].incorrect_answers[1] !== undefined)   
         {document.querySelector('#ia2').innerHTML = "" + data.results[0].incorrect_answers[1];} else {document.querySelector('#ia2').innerHTML = "";}
